@@ -11,15 +11,17 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light ">
       <a class="navbar-brand" href="#">
         <%# <%= image_tag "N.jpeg", width:100, class:"d-inline-block align-top" %>
         <p>NOTFLIX</p>
       </a>
+      <div id="navbar-text">
         <%= link_to "Homepage", root_path%>
         <%= link_to "See Lists", lists_path%>
         <%= link_to "Create Lists", new_list_path%>
         <%= link_to "Search", movies_path%>
+      </div>
 
     </nav>
 

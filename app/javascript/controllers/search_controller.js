@@ -12,6 +12,7 @@ export default class extends Controller {
             <span class="badge bg-primary mb-2">${year}</span>
             <h5 class="card-title">${title}</h5>
           </div>
+          <button type="button" class="btn btn-primary">Add to a List</button>
         </div>
       </div>`;
     this.cardsTarget.insertAdjacentHTML("afterbegin", movieHtml);
@@ -25,7 +26,7 @@ export default class extends Controller {
       .then((response) => response.json())
       .then((data) => {
       const movies = data.Search
-      movies.forEach((movie) => {
+      movies.slice(0, 5).forEach((movie) => {
         const title = movie.Title;
         const poster = movie.Poster;
         const year = movie.Year;

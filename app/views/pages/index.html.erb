@@ -9,7 +9,10 @@
     <div class="card-body">
       <h5 class="card-title"><%= list.name%></h5>
       <p class="card-text"><%=list.created_at%></p>
+      <p class="card-text">Number of movies in the list: </p>
+      <p><%=list.movies.count%></p>
       <%= link_to "See list", list_path(list), class:"btn btn-primary" %>
+
     </div>
   </div>
 <% end %>

@@ -1,6 +1,14 @@
 <h1>Create a new List</h1>
 
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="row">
+    <div class="col">
+      <p>Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae.<p>
+      <%= simple_form_for @list, html: { class: 'form-group' } do |f| %>
+        <%= f.input :name, label_html: { class: 'form-label' }, input_html: { class: 'form-control' } %>
+
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+    <div class="col">
+      <img src ='https://media.timeout.com/images/105771947/image.jpg' width="500">
+    </div>
