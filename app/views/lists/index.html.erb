@@ -1,5 +1,7 @@
 <h1>See all your lists here </h1>
 
-<% @lists.each do |list|%>
-  <p> <%= link_to list.name, list_path(list) %> </p>
-<% end %>
+<div class="d-flex flex-wrap">
+  <% @lists.each do |list| %>
+    <p class="flex-fill p-2"><%= link_to list.name, list_path(list) %></p>
+  <% end %>
+</div>
