@@ -1,11 +1,15 @@
-<h1>Hello World!</h1>
+<h1>My Lists!</h1>
 
-<ul>
-  <% @lists.each do |list| %>
-  <li>
-    <%= link_to list.name, list_path(list) %>
-  </li>
-  <% end %>
-</ul>
 
-<%= link_to "Add a list", new_list_path%>
+<p data-controller="search"></p>
+
+<% @lists.each do |list| %>
+
+  <div class="card m-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= list.name%></h5>
+      <p class="card-text"><%=list.created_at%></p>
+      <%= link_to "See list", list_path(list), class:"btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
