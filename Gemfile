@@ -24,6 +24,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 gem "dotenv-rails"
+gem "cloudinary"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
