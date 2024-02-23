@@ -8,8 +8,8 @@ export default class extends Controller {
     poster: String
   }
 
-  store(data) {
-    fetch('/movies', {
+  create(data) {
+    fetch(`${window.location.href}/bookmarks`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export default class extends Controller {
     .then(response => response.json())
     .then(data => console.log('Success:', data))
     .catch((error) => console.error('Error:', error));
-    console.log("Sending data to controller")
+    console.log("Sending data to Movie Controller")
   }
 
   add() {
@@ -38,7 +38,7 @@ export default class extends Controller {
 
     console.log(data)
 
-    this.store(data)
+    this.create(data)
 
 
   }
