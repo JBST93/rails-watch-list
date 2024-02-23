@@ -1,5 +1,39 @@
-<h1>My Lists!</h1>
 
+<h1>Why Notflix?</h1>
+<div class="container my-5">
+  <div class="row">
+    <!-- Create Watchlists -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Create Watchlists</h5>
+          <p class="card-text">Easily create personalized watchlists to track movies you want to watch. Organize your lists by genre, release year, or any way you like!</p>
+        </div>
+      </div>
+    </div>
+    <!-- Search for Movies -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Search for Movies</h5>
+          <p class="card-text">Find your next favorite movie with our powerful search feature. Explore a vast database of films from classics to the latest releases.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add Movies to Watchlist -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Add Movies to Watchlist</h5>
+          <p class="card-text">With just a click, add movies to your watchlist as you discover them. Keep track of movies you plan to watch and share your lists with friends.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h1>Top Three Largest Watchlists!</h1>
 
 <p data-controller="search"></p>
 
@@ -7,7 +41,7 @@
   <div class="row">
     <% @lists.each do |list| %>
       <div class="col-lg-4 col-md-6">
-        <div class="card m-2" style="width: 22rem; height: 30rem; position: relative; overflow: hidden; background-size: cover; background-position: center; <%= 'background-image: url(' + url_for(list.image) + ');' if list.image.attached? %>">
+        <div class="card m-2" style="width: 22rem; height: 30rem; position: relative; overflow: hidden; background-size: cover; background-position: center; <%= 'background-image: url(' + cl_image_path(list.image.key) + ');' if list.image.attached? %>">
           <div class="card-movie-count">
             <%= list.movies.count %> Movies
           </div>
@@ -21,3 +55,5 @@
     <% end %>
   </div>
 </div>
+
+ <%= link_to "See More", lists_path, class: "btn btn-primary"%>
