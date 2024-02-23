@@ -1,0 +1,16 @@
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-lg-4 col-md-6">
+        <div class="card m-2" style="width: 22rem; height: 30rem; position: relative; overflow: hidden; background-size: cover; background-position: center; <%= 'background-image: url(' + cl_image_path(list.image.key) + ');' if list.image.attached? %>">
+          <div class="card-movie-count">
+            <%= list.movies.count %> Movies
+          </div>
+          <div class="card-body" style="position: absolute; bottom: 0; background: rgba(0, 0, 0, 0.5); color: white; width: 100%; padding: 10px;">
+            <h5 class="card-title"><%= list.name %></h5>
+            <p class="card-text"><%= list.created_at.to_formatted_s(:short) %></p>
+            <%= link_to "See list", list_path(list), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>

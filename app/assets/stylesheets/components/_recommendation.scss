@@ -1,0 +1,129 @@
+.recommendation {
+  padding: 20px;
+  background-color: #f8f9fa; /* Light grey background, adjust to match your site's theme */
+  margin-bottom: 20px;
+}
+
+.recommendation h2, .recommendation h3 {
+  text-align: center;
+  color: #333; /* Darker text for better readability */
+}
+
+.recommendation-card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow to each card */
+  margin-bottom: 20px; /* Space between cards */
+  background-color: #ffffff; /* White background for the card */
+  border-radius: 8px; /* Rounded corners for the card */
+  overflow: hidden; /* Ensures the content fits within the rounded corners */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space inside the card */
+}
+
+.img_preview {
+  width: 100%; /* Ensures the image covers the width of the card */
+  height: auto; /* Keeps the image aspect ratio */
+  border-top-left-radius: 8px; /* Rounds the top left corner of the image */
+  border-top-right-radius: 8px; /* Rounds the top right corner of the image */
+}
+
+.card-body {
+  padding: 15px; /* Adds padding inside the card body for spacing */
+}
+
+.card-title {
+  font-size: 1.2rem; /* Adjust title size */
+  margin-bottom: 10px; /* Space between title and overview */
+}
+
+.card-text {
+  font-size: 0.9rem; /* Smaller text for the overview */
+  color: #666; /* Lighter text color for contrast */
+  margin-bottom: 15px; /* Space between text and button */
+}
+
+.btn-primary {
+  color: #fff; /* White text on the button */
+  background-color: #007bff; /* Bootstrap primary color */
+  border-color: #007bff;
+  padding: 10px; /* Button padding */
+  display: block; /* Makes the button take the full width of the card-body */
+  text-align: center; /* Centers the button text */
+  border-radius: 4px; /* Rounded corners for the button */
+  transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  border-color: #0056b3;
+}
+
+/* Ensure the .row uses display:flex and wraps the items */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style for the recommendation cards */
+.recommendation-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Make cards of the same height */
+}
+
+.img_preview {
+  width: 100%; /* Make image cover the full width of the card */
+  border-top-left-radius: calc(0.25rem - 1px); /* Match Bootstrap's border-radius */
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card-body {
+  flex: 1; /* Allows the card body to expand */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space content evenly */
+}
+
+/* Ensures title and text are nicely formatted */
+.card-title, .card-text {
+  margin-bottom: 1rem;
+}
+
+/* Button styling */
+.btn-primary {
+  margin-top: auto; /* Push the button to the bottom */
+}
+
+/* Adding some padding around each card for better spacing */
+.col-lg-2, .col-md-6 {
+  padding: 0.5rem;
+}
+
+/* Additional styling for the recommendation section */
+.recommendation h2, .recommendation h3 {
+  text-align: center; /* Center-align the section headings */
+  margin-bottom: 2rem; /* Add some space below the headings */
+}
+
+
+.carousel-item .row {
+  margin: 0;
+  flex-wrap: nowrap;
+}
+
+.carousel-item .col {
+  flex: 0 0 auto;
+  width: 20%; /* Makes 5 items fit in a row */
+}
+
+.recommendation-card {
+  margin: 0 10px; /* Adds some space between cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.img_preview {
+  max-width: 100%;
+  height: auto;
+}

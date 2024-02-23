@@ -12,8 +12,11 @@ export default class extends Controller {
             <span class="badge bg-primary mb-2">${year}</span>
             <h5 class="card-title">${title}</h5>
           </div>
-          <button type="button" class="btn btn-primary">Add to a List</button>
-        </div>
+          <button data-controller="add-list" data-action="click->add-list#add"
+          data-add-list-title-value="${title}"
+          data-add-list-year-value="${year}"
+          data-add-list-poster-value="${poster}">Add to List</button>
+          </div>
       </div>`;
     this.cardsTarget.insertAdjacentHTML("afterbegin", movieHtml);
   }
