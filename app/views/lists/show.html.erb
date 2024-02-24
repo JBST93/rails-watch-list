@@ -1,33 +1,17 @@
 <h1>Movies in list:  <%= @list.name %></h1>
-<%= link_to "Delete List", list_path(@list), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<%= link_to "Delete List", list_path(@list), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"btn btn-danger" %>
 
 <div class="row">
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="col-lg-4 col-md-6">
-      <div class="card mb-3 equal-height-card"> <!-- Use the custom class for equal height -->
-        <div class="row g-0">
-          <div class="col-md-4">
-            <!-- Apply the custom class to make the image cover the full height -->
-            <img src="<%= bookmark.movie.poster_url %>" class="img-fluid rounded-start card-img-left" alt="<%= bookmark.movie.title %>">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title"><%= bookmark.movie.title %></h5>
-              <p class="card-text"><%= bookmark.comment %></p>
-              <p class="card-text"><%= bookmark.movie.overview %></p>
-              <p class="card-text"><%= bookmark.movie.created_at.to_formatted_s(:short) %></p>
-            <%= button_to 'Delete Bookmark', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <!-- Movie List Column -->
+  <div class="col-md-9">
+    <%= render 'movie_card' %>
+  </div>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <!-- Description Column -->
+  <div class="col-md-3">
+    <%= render 'list_information' %>
+  </div>
 </div>
-
-
-
 
 
 

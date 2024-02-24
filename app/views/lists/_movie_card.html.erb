@@ -1,0 +1,82 @@
+<div class="row">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+      <div class="card movie-card mb-4"> <!-- Added movie-card class for styling -->
+        <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="<%= bookmark.movie.title %>"> <!-- Moved image to top -->
+        <div class="card-body">
+          <h5 class="card-title"><%= bookmark.movie.title %></h5>
+          <p class="card-text">Added on: <%= bookmark.movie.created_at.to_formatted_s(:short) %></p>
+          <%= button_to 'Remove Movie', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn remove-movie-btn" %> <!-- Updated button class -->
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<style>
+  /* Ensure equal height for cards */
+.d-flex.align-items-stretch {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+/* Image cover styling */
+.card-img-left {
+  object-fit: cover; /* Ensure the image covers the area without stretching */
+}
+
+/* Card styling for equal height */
+.equal-height-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 1; /* Allows card body to expand and push the button down */
+}
+
+.btn-danger {
+  align-self: center; /* Center the button if there's room */
+}
+
+.remove-movie-btn {
+  background-color: #ff4757; /* A vibrant red */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.remove-movie-btn:hover {
+  background-color: #ff6b81; /* Lighter red on hover */
+}
+
+.card-body {
+  padding: 10px; /* Reduced padding */
+}
+
+.card-title {
+  font-size: 18px; /* Slightly reduced font size */
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.card-text {
+  font-size: 14px; /* Reduced font size for less space usage */
+  margin-bottom: 10px; /* Ensures less space before the button */
+}
+
+.btn.remove-movie-btn {
+  padding: 8px 16px; /* Adjusted padding */
+  font-size: 14px; /* Slightly reduced font size */
+}
+
+.movie-card {
+  margin-bottom: 2rem; /* Adjusted for more space between cards */
+  /* Other styles remain unchanged */
+}
+</style>
