@@ -22,7 +22,7 @@ export default class extends Controller {
   }
 
   fetchMovies = (input) => {
-    const url = "http://www.omdbapi.com/";
+    const url = "https://www.omdbapi.com/";
     const apiKey = "8691812a";
 
     fetch(`${url}?apikey=${apiKey}&s=${input}`)
