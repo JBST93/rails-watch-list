@@ -15,7 +15,7 @@
               <p class="card-text"><%= bookmark.comment %></p>
               <p class="card-text"><%= bookmark.movie.overview %></p>
               <p class="card-text"><%= bookmark.movie.created_at.to_formatted_s(:short) %></p>
-              <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+              <%= link_to 'Delete', list_path(@list), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
             </div>
           </div>
         </div>
@@ -23,10 +23,6 @@
     </div>
   <% end %>
 </div>
-
-
-
-<%= link_to "Bookmark a movie", new_list_bookmark_path(@list)%>
 
 
 <h1>Want to add a movie? Search for it!</h1>

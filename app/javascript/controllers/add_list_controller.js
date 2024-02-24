@@ -17,29 +17,22 @@ export default class extends Controller {
       },
       body: data
     })
-    .then(response => response.json())
+    .then(window.location.reload())
     .then(data => console.log('Success:', data))
+    .then(window.location.reload)
     .catch((error) => console.error('Error:', error));
-    console.log("Sending data to Movie Controller")
   }
 
   add() {
-    console.log("I am adding..")
     const title = this.titleValue
     const year =  this.yearValue
     const poster_url = this.posterValue
     const data = JSON.stringify({
       movie: {
         title: title,
-        // year: year,
         poster_url: poster_url
       }
     })
-
-    console.log(data)
-
     this.create(data)
-
-
   }
 }
