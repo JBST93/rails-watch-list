@@ -1,18 +1,17 @@
-<h1>What to watch?</h1>
 
-<div class="container mt-4">
-  <div class="row g-3">
-    <% @movies_rand.each do |movie| %>
-      <div class="col card-column-5">
-        <div class="card h-100 recommendation-card">
-          <%= image_tag movie.poster_url, class: "card-img-top img_preview", alt: movie.title %>
-          <div class="card-body">
-            <h5 class="card-title"><%= movie.title %></h5>
-          </div>
-          <div class="card-footer">
+<h3><strong>What to watch?</strong></h3>
+
+  <div class="container mb-4">
+    <div class="row g-3">
+      <% @movies_rand.each do |movie| %>
+        <div class="col card-column-5">
+          <div class="card h-100 recommendation-card">
+            <%= image_tag movie.poster_url, class: "card-img-top img_preview", alt: movie.title %>
+            <div class="card-body">
+              <h5 class="card-title"><%= movie.title %></h5>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
