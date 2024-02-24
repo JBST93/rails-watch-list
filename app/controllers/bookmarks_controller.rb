@@ -2,12 +2,19 @@ class BookmarksController < ApplicationController
 
   def create
     @list = List.find(params[:list_id])
-    @movie = Movie.new(movie_params)
     @bookmark = Bookmark.new
     @bookmark.list = @list
+
+    if Movie.find_by(title: movie_params[:title])
+      @movie = Movie.find_by(title: movie_params[:title])
+    else
+      @movie = Movie.new(movie_params)
+      @bookmark.movie = @movie
+    end
+
     @bookmark.movie = @movie
-    @movie.save!
-    @bookmark.save!
+    @movie.save
+    @bookmark.save
   end
 
   def destroy
