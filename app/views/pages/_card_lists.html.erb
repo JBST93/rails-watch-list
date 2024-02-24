@@ -1,5 +1,5 @@
   <div class="row">
-    <% @lists.each do |list| %>
+    <% @lists.slice(0.3).each do |list| %>
       <div class="col-lg-4 col-md-6">
         <div class="card m-2" style="width: 22rem; height: 30rem; position: relative; overflow: hidden; background-size: cover; background-position: center; <%= 'background-image: url(' + cl_image_path(list.image.key) + ');' if list.image.attached? %>">
           <div class="card-movie-count">
@@ -15,5 +15,4 @@
     <% end %>
   </div>
   <div>
-    <%= link_to "See All Lists", lists_path, class: "btn btn-primary"%>
   </div>
