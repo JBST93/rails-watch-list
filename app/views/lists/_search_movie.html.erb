@@ -1,0 +1,16 @@
+<h1>Want to add a movie? Search for it!</h1>
+<div data-controller="search">
+ <form id="search-movies" >
+            <div class="form-group">
+              <label for="movie-name" class="form-label">Enter a movie name</label>
+              <div class="d-flex">
+                <input data-search-target="input" type="text" id="movie-name" class="form-control" placeholder="The Shawshank Redemption, The Godfather...">
+                <input type="submit" value="Search" class="btn btn-primary ms-2" data-action="click->search#search">
+              </div>
+            </div>
+  </form>
+
+ <div class="row m-3" id="movie-cards" data-search-target="cards">
+        <!-- TODO: Display movie posters here -->
+      </div>
+</div>
